@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="pysp">this is getelementsbyclassname method</h1>
+    <h2 class="pysp">this is heading 2</h2>
+    <p class="pysp">this is paragraph tag</p>
+    <div class="pysp">this is division</div>
+    <button onclick="change()">change the color</button>
+    <script>
+        function change(){
+            let element = document.getElementsByClassName("pysp")
+            // element[0].style.color='yellow'
+            // element[1].style.color='red'
+            // element[2].style.color='skyblue'
+            // element[3].style.color='purple'
+            for (i in element){
+                if ([i] %2 == 0){
+                    element[i].style.color='yellow'
+                }
+                else{
+                    element[i].style.color='red'
+
+                }    
+
+                }
+                
+
+                
+            }
+        
+    </script>
+</body>
+</html>

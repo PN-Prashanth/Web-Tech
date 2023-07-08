@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding-top: 20px;
+            height: 500px;
+            width: 500px;
+            border-radius: 20px;
+            border: solid;
+        }
+        .box:hover{
+            color: red;
+            background-color: aqua;
+            border-radius: 50px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <img src="C:\Users\Prashanth N\Documents\project3\comm\images\hero page\3.jpg" alt="">
+   <div class="box">
+        <fieldset style="width: fit-content; border-radius: 20px;">
+        ENTER CITY NAME: <input type="text" id="in"><br><br>
+
+        <button type="submit" onclick="fun()" id="new" style="background-color: orange;">CHECK WEATHER</button>
+        <h4>Weather Report :</h4>
+        
+
+        <h4 id="text1"></h4>
+        <h4 id="text2"></h4>
+        <h4 id="text3"></h4>
+    </div>
+        
+
+        <script>
+            function fun() {
+                let place = document.getElementById('in')
+
+                let url = `https://goweather.herokuapp.com/weather/${place}`
+                let fetched_url = fetch(url)
+
+
+
+                fetched_url
+                    .then((resp) => {
+                        return resp.json()
+                    })
+                    .then((datas) => {
+                        let temp = `temperature :${datas['temperature']}`
+                        let wind = `wind : ${datas['wind']}`
+                        let desc = `description : ${datas['description']}`
+                        console.log(datas)
+
+                        document.getElementById('text1').innerHTML = temp
+                        document.getElementById('text2').innerHTML = wind
+                        document.getElementById('text3').innerHTML = desc
+
+                    })
+            }
+        </script>
+    </fieldset>
+   
+</body>
+
+</html>

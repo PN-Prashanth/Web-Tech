@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="gender" id="female"><label for="male">Male</label>
+    <input type="radio" name="gender" id="female"><label for="female">Female</label>
+    <input type="radio" name="gender" id="female"><label for="other">Other</label>
+    <button onclick="namecount()">Count</button>
+    <p id="pass1"></p>
+    <!-- <h1>heading h1</h1>
+    <h2>this is h2</h2>
+    <p>paragraph</p>
+    <div>division</div><br>
+    <button onclick="tagCount()" style="background-color: rgb(26, 189, 11);">Count</button>
+    <p id="pass1"></p>
+    <script>
+        function tagCount(){
+        let tagH1 = document.getElementsByTagName("h1");
+        let tagH2 = document.getElementsByTagName("h2");
+        let tagp = document.getElementsByTagName("p");
+        let tagdiv = document.getElementsByTagName("div");
+
+        document.getElementById('pass1') .innerHTML = `Number of h1 tags : ${tagH1.length}
+        number of H2 tags :  ${tagH2.length} 
+        number of para tags : ${tagP.length}
+        number of div tag : ${tagdiv.length}`;
+    }
+        
+
+    
+        
+    </script> -->
+
+    <script>
+        function namecount(){
+            let allGender = document.getElementsByName('gender')
+            document.getElementById("pass1").innerHTML = `total number of gender : ${allGender.length}`
+            
+
+        }
+    </script>
+</body>
+</html>

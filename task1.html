@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETCh API</title>
+    <style>
+        p{
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+    <p id="t1"></p>
+    <p id="t2"></p>
+    <p id="t3"></p>
+
+    <script>
+        let place = prompt("enter the place: ")
+        // Store API in the form of string
+        let url=`https://goweather.herokuapp.com/weather/${place}`
+
+        //Fetch the API using feych() method
+        let fetched_url = fetch(url)
+
+        //process fetched api
+        fetched_url.then((resp)=>{
+            return resp.json()
+        }).then ((datas)=>{
+            let description = `The temperature of ${place} is ${datas['temperature']}`
+            let temperature = `weather of ${place} is ${datas['description']}`
+            let wind = `the wind speed of ${place} is ${datas['wind']}`
+        
+        document.getElementById("t1").innerHTML=description
+        document.getElementById("t2").innerHTML=temperature
+        document.getElementById("t3").innerHTML=wind
+        })
+    </script>
+</body>
+</html>
