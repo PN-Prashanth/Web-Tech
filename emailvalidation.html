@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter email: <input type="text" name="" id="mail">
+ 
+    <br><br>
+    <button onclick="mailvalid()">Validate</button>
+    
+    <script>
+        function mailvalid(){
+            let mailid = document.getElementById("mail").value
+           if(mailid.indexOf("@")== 0){
+            alert("Enter invalid mail")
+
+           }
+           else if(mailid.charAt(mailid.length-4)!=="." && mailid.charAt(mailid.length-3)!=="." ){
+            alert("enter correct mail")
+           }
+           else{
+            alert("enterd valid mail")
+           }
+        }
+        
+    </script>
+</body>
+</html>
